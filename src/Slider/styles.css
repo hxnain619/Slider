@@ -1,0 +1,49 @@
+.cards-slider {
+    max-width: 1000%;
+    max-height: 100%;
+    min-width: 1000%;
+    min-height: 80%;
+}
+.text {
+    height: 105px;
+    font-size: .5em;
+    word-wrap: break-word;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+}
+.slider-btn {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 25px;
+    text-align: center;
+    width: 45px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.24);
+    color: white;
+    outline: none;
+    position: fixed;
+    z-index: 999;
+    transition: all 0.6s ease 0s;
+}
+
+.slider-btn:hover {
+    color:black;
+}
+.link {
+    text-decoration: none;
+}
+.leftIcon {
+    transform: rotateZ(180deg)
+}
+.btn-r {
+    top: 200px;
+    right: 0;
+}
+
+.btn-l {
+    
+    top: 200px;
+    left: 0px;
+}
