@@ -13,13 +13,13 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import Data from '../db.json';
+import avatar from '../favicon.ico';
 
 const styles = () => ({
     card: {
-        maxWidth: 308,
+        width: 308,
         margin: 26,
         display: 'inline-block',
-        maxHeight: 500
     },
     media: {
         height: 0,
@@ -30,6 +30,13 @@ const styles = () => ({
     },
     avatar: {
         backgroundColor: red[500],
+    },
+    header : {
+        padding : 19,
+        fontWeight: 'bold'
+    },
+    icon : {
+        paddingTop: 0
     }
 })
 class Content extends React.Component {
@@ -39,8 +46,8 @@ class Content extends React.Component {
 
     ColorChange = (e) => {
         var heart = e.currentTarget;
-        if (heart.style.color !== 'red') {
-            heart.style.color = 'red'
+        if (heart.style.color !== 'green') {
+            heart.style.color = 'green'
         } else {
             heart.style.color = 'grey'
         }
@@ -69,10 +76,13 @@ class Content extends React.Component {
                                     image={data.image_url}
                                 />
                                 <CardHeader
+                                className={classes.header}
                                     avatar={
-                                        <Avatar aria-label="Recipe" className={classes.avatar}>
-                                            R
-                            </Avatar>}
+                                        <Avatar
+                                        aria-label="Recipe"
+                                        className={classes.avatar}>
+                                            <img src={avatar} />
+                                    </Avatar>}
 
                                     title={data.title}
                                     subheader={data.subtitle}
@@ -82,10 +92,12 @@ class Content extends React.Component {
                                 </CardContent>
                             </a>
                             <CardActions className={classes.actions} disableActionSpacing>
-                                <IconButton aria-label="Add to favorites" id={data.id}
+                                <IconButton aria-label="Add to favorites"
+                                className={classes.icon}
+                                onClick={(e) => this.ColorChange(e)} 
                                 >
                                     <FavoriteIcon
-                                        onClick={(e) => this.ColorChange(e)} />
+                                       />
                                 </IconButton>
                             </CardActions>
                         </Card>
